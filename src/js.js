@@ -190,6 +190,7 @@ function toReadable(number) {
     ];
 
     var numberString = number.toString();
+ 
 
     if (number < 0) throw new Error("Negative numberbers are not supported.");
 
@@ -213,7 +214,8 @@ function toReadable(number) {
             return (
                 ones[numberString[0]] +
                 " hundred " +
-                (tens[numberString[1]] + " " + ones[numberString[1]])
+                tens[numberString[1]] +
+                ones[numberString[0]]
             );
     }
 
@@ -225,4 +227,4 @@ function toReadable(number) {
         return ones[numberString[0]] + " thousand " + convert(end);
     }
 }
-console.log(toReadable(588));
+console.log(toReadable(240));
