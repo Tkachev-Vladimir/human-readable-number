@@ -1,6 +1,6 @@
 module.exports = function toReadable (number) {
-var th = ["", "thousand", "million", "billion", "trillion"];
-var dg = [
+let th = ["", "thousand", "million", "billion", "trillion"];
+let dg = [
     "zero",
     "one",
     "two",
@@ -12,7 +12,7 @@ var dg = [
     "eight",
     "nine",
 ];
-var tn = [
+let tn = [
     "ten",
     "eleven",
     "twelve",
@@ -24,7 +24,7 @@ var tn = [
     "eighteen",
     "nineteen",
 ];
-var tw = [
+let tw = [
     "twenty",
     "thirty",
     "forty",
@@ -38,13 +38,13 @@ var tw = [
     number = number.toString();
     number = number.replace(/[\, ]/g, "");
     if (number != parseFloat(number)) return "not a number";
-    var x = number.indexOf(".");
+    let x = number.indexOf(".");
     if (x == -1) x = number.length;
     if (x > 15) return "too big";
-    var n = number.split("");
-    var str = "";
-    var sk = 0;
-    for (var i = 0; i < x; i++) {
+    let n = number.split("");
+    let str = "";
+    let sk = 0;
+    for (let i = 0; i < x; i++) {
         if ((x - i) % 3 == 2) {
             if (n[i] == "1") {
                 str += tn[Number(n[i + 1])] + " ";
@@ -67,9 +67,9 @@ var tw = [
     }
 
     if (x != number.length) {
-        var y = number.length;
+        let y = number.length;
         str += "point ";
-        for (var i = x + 1; i < y; i++) str += dg[n[i]] + " ";
+        for (let i = x + 1; i < y; i++) str += dg[n[i]] + " ";
     }
     return str.replace(/\s+/g, " ");
 }
