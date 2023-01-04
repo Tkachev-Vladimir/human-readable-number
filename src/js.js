@@ -197,6 +197,7 @@ function toReadable(number) {
 
     //the case of 1 - 20
     if (number < 20) {
+     
         return ones[number];
     }
 
@@ -211,8 +212,8 @@ function toReadable(number) {
         else
             return (
                 ones[numberString[0]] +
-                " hundred and " +
-                convert(+(numberString[1] + numberString[2]))
+                " hundred " +
+                (tens[numberString[1]] + " " + ones[numberString[1]])
             );
     }
 
@@ -224,4 +225,4 @@ function toReadable(number) {
         return ones[numberString[0]] + " thousand " + convert(end);
     }
 }
-console.log(toReadable(5));
+console.log(toReadable(588));

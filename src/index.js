@@ -56,8 +56,8 @@ module.exports = function toReadable (number) {
         else
             return (
                 ones[numberString[0]] +
-                " hundred and " +
-                convert(+(numberString[1] + numberString[2]))
+                " hundred " +
+                (tens[numberString[1]] + " " + ones[numberString[1]])
             );
     }
 
