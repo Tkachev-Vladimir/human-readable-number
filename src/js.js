@@ -212,7 +212,7 @@ function humanize(num) {
             return (
                 ones[numString[0]] +
                 " hundred and " +
-                (tens[numString[1]] + ones[numString[2]]))
+                tens[numString[1]] + ones[numString[2]])
             ;
     }
 

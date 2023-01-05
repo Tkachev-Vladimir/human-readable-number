@@ -53,7 +53,7 @@ if(numString.length === 3){
     if(numString[1] === '' && numString[2]=== '0'){
         return ones[numString[0]] + ' hundred'
     }else {
-        return ones[numString[0]] + " hundred " + (tens[numString[1]] + ones[numString[2]]);
+        return ones[numString[0]] + " hundred " + (tens[numString[1]] + ' ' + ones[numString[2]]);
     }
 // console.log(ones[numString[0]] + ' Hundred ' +( ones[number]))
 }
@@ -62,8 +62,8 @@ if(numString.length === 3){
 
 }
 
-console.log('fa')
-console.log(toReadable(617));
+// console.log('fa')
+console.log(toReadable(555));
 
 
 
