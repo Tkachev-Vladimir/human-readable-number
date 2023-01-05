@@ -153,7 +153,7 @@
 
 // console.log(toReadable(1));
 
-function toReadable(number) {
+function humanize(num) {
     var ones = [
         "",
         "one",
@@ -189,42 +189,40 @@ function toReadable(number) {
         "ninety",
     ];
 
-    var numberString = number.toString();
- 
+    var numString = num.toString();
 
-    if (number < 0) throw new Error("Negative numberbers are not supported.");
+    if (num < 0) throw new Error("Negative numbers are not supported.");
 
-    if (number === 0) return "zero";
+    if (num === 0) return "zero";
 
     //the case of 1 - 20
-    if (number < 20) {
-     
-        return ones[number];
+    if (num < 20) {
+        return ones[num];
     }
 
-    if (numberString.length === 2) {
-        return tens[numberString[0]] + " " + ones[numberString[1]];
+    if (numString.length === 2) {
+        return tens[numString[0]] + " " + ones[numString[1]];
     }
 
     //100 and more
-    if (numberString.length == 3) {
-        if (numberString[1] === "0" && numberString[2] === "0")
-            return ones[numberString[0]] + " hundred";
+    if (numString.length == 3) {
+        if (numString[1] === "0" && numString[2] === "0")
+            return ones[numString[0]] + " hundred";
         else
             return (
-                ones[numberString[0]] +
-                " hundred " +
-                tens[numberString[1]] +
-                ones[numberString[0]]
-            );
+                ones[numString[0]] +
+                " hundred and " +
+                (tens[numString[1]] + ones[numString[2]]))
+            ;
     }
 
-    if (numberString.length === 4) {
-        var end = +(numberString[1] + numberString[2] + numberString[3]);
-        if (end === 0) return ones[numberString[0]] + " thousand";
+    if (numString.length === 4) {
+        var end = +(numString[1] + numString[2] + numString[3]);
+        if (end === 0) return ones[numString[0]] + " thousand";
         if (end < 100)
-            return ones[numberString[0]] + " thousand and " + convert(end);
-        return ones[numberString[0]] + " thousand " + convert(end);
+            return ones[numString[0]] + " thousand and " + convert(end);
+        return ones[numString[0]] + " thousand " + convert(end);
     }
 }
-console.log(toReadable(240));
+
+console.log(humanize(610));
