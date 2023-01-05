@@ -145,4 +145,4 @@ function toWords(number) {
     return str.replace(/\s+/g, " ");
 }
 
-console.log(toWords(617));
+console.log(toWords(111));

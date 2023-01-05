@@ -1,4 +1,5 @@
 module.exports = function toReadable (number) {
+    var th = ["", "thousand", "million", "billion", "trillion"];
     var dg = [
         "zero",
         "one",
@@ -33,6 +34,7 @@ module.exports = function toReadable (number) {
         "eighty",
         "ninety",
     ];
+
     number = number.toString();
     number = number.replace(/[\, ]/g, "");
     if (number != parseFloat(number)) return "not a number";
@@ -57,6 +59,9 @@ module.exports = function toReadable (number) {
             str += dg[n[i]] + " ";
             if ((x - i) % 3 == 0) str += "hundred ";
             sk = 1;
+        } if ((x - i) % 3 == 1) {
+            if (sk) str += th[(x - i - 1) / 3] + " ";
+            sk = 0;
         }
       
     }
@@ -68,4 +73,3 @@ module.exports = function toReadable (number) {
     }
     return str.replace(/\s+/g, " ");
 }
-console.log(toReadable(15));
