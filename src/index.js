@@ -1,4 +1,4 @@
-function toReadable (number) {
+module.exports = function toReadable (number) {
     var dg = [
         "zero",
         "one",
@@ -68,4 +68,4 @@ function toReadable (number) {
     }
     return str.replace(/\s+/g, " ");
 }
-console.log(toReadable(115));
+console.log(toReadable(15));
