@@ -54,6 +54,6 @@ if(numString.length === 3){
         return ones[numString[0]] + ' hundred'
     }else {
         return ones[numString[0]] + " hundred " + (tens[numString[1]] + ones[numString[2]]);
-    }
+    }}
 // console.log(ones[numString[0]] + ' Hundred ' +( ones[number]))
 }
