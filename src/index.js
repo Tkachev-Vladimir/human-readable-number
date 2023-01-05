@@ -1,4 +1,4 @@
-module.exports = function toReadable (number) {
+function toReadable (number) {
     var dg = [
         "zero",
         "one",
@@ -58,10 +58,7 @@ module.exports = function toReadable (number) {
             if ((x - i) % 3 == 0) str += "hundred ";
             sk = 1;
         }
-        if ((x - i) % 3 == 1) {
-            if (sk) str += th[(x - i - 1) / 3] + " ";
-            sk = 0;
-        }
+      
     }
 
     if (x != number.length) {
@@ -71,3 +68,4 @@ module.exports = function toReadable (number) {
     }
     return str.replace(/\s+/g, " ");
 }
+console.log(toReadable(115));
