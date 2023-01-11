@@ -67,7 +67,5 @@ let twelve = [
         return ones[numString[0]] + " hundred " + tens[numString[2]];
     } else if (numString >= 100 && numString[1] == 0) {
         return ones[numString[0]] + " hundred " + ones[numString[2]];
-    } else if (numString >= 100 && numString[1] == 1 && numString[2] == 0) {
-        return ones[numString[0]] + " hundred " + tens[numString[2]];
-    }
+    } 
  }
