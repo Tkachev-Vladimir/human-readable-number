@@ -48,7 +48,7 @@ let twelve = [
     } else if (numString >= 10 && numString < 20) {
         return tens[numString[1]];
     } else if (numString >= 20 && numString < 100) {
-        return twelve[numString[0]] + "" + ones[numString[1]];
+        return twelve[numString[0]] + " " + ones[numString[1]];
     }
     //     else if(numString == 100){
     //  return ones[numString[0]] + 'hundred'
@@ -67,5 +67,7 @@ let twelve = [
         return ones[numString[0]] + " hundred " + tens[numString[2]];
     } else if (numString >= 100 && numString[1] == 0) {
         return ones[numString[0]] + " hundred " + ones[numString[2]];
-    } 
+    } else if (numString >= 100 && numString[1] == 1 && numString[2] ==0){
+      return  ones[numString[0]] + " hundred " + tens[numString[2]];
+    }
  }
