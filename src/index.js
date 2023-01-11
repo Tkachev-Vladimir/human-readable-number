@@ -48,7 +48,7 @@ let twelve = [
     } else if (numString >= 10 && numString < 20) {
         return tens[numString[1]];
     } else if (numString >= 20 && numString < 100) {
-        return twelve[numString[0]] + " " + ones[numString[1]];
+        return (twelve[numString[0]] + " " + ones[numString[1]]).trim();
     }
     //     else if(numString == 100){
     //  return ones[numString[0]] + 'hundred'
