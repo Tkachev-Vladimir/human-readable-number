@@ -55,19 +55,19 @@ let twelve = [
     //     }
     else if (numString >= 100 && numString[1] != 1 && numString[1] != 0) {
         return (
-            ones[numString[0]] +
+            (ones[numString[0]] +
             " hundred " +
             twelve[numString[1]] +
             " " +
-            ones[numString[2]]
+            ones[numString[2]]).trim()
         );
     } else if (numString >= 100 && numString[1] == 1 && numString[2] != 0) {
-        return ones[numString[0]] + " hundred " + tens[numString[2]];
+        return (ones[numString[0]] + " hundred " + tens[numString[2]]).trim();
     } else if (numString >= 100 && numString[1] == 1 && numString[2] != 0) {
-        return ones[numString[0]] + " hundred " + tens[numString[2]];
+        return (ones[numString[0]] + " hundred " + tens[numString[2]]).trim();
     } else if (numString >= 100 && numString[1] == 0) {
-        return ones[numString[0]] + " hundred " + ones[numString[2]];
+        return (ones[numString[0]] + " hundred " + ones[numString[2]]).trim();
     } else if (numString >= 100 && numString[1] == 1 && numString[2] ==0){
-      return  ones[numString[0]] + " hundred " + tens[numString[2]];
+      return (ones[numString[0]] + " hundred " + tens[numString[2]]).trim();
     }
  }
